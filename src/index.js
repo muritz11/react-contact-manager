@@ -1,16 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 import './vendor/bootstrap/css/bootstrap.min.css';
+import reportWebVitals from './reportWebVitals';
+
+
+//the initial state of the app
+const initialState = {
+  contacts: ['maurice', 'lil sis', 'mum', 'A chigozie']
+};
+
+
+//reducer function
+function reducer(state = initialState, action) {
+  switch (action.type) {
+
+    case 'ADD_CONTACT':
+
+      return {...state, contacts: [...state.contacts, action.data]}
+
+    default:
+
+      return state;
+
+  }
+}
+
+
+//create our store and use <provider> to make it avail. to all child components
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
