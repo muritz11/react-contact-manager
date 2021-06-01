@@ -1,8 +1,7 @@
-
 import React from 'react';
 import PeopleList from './components/PeopleList';
 import AddContact from './components/AddContact';
-import './App.css';
+import './css/App.css';
 
 
 

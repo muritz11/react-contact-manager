@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App';
-import './index.css';
+import './css/index.css';
 import './vendor/bootstrap/css/bootstrap.min.css';
-import reportWebVitals from './reportWebVitals';
 
 
 //the initial state of the app
@@ -47,4 +46,3 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
