@@ -1,7 +1,10 @@
 import React from 'react';
 import PeopleList from './components/PeopleList';
-import AddContact from './components/AddContact';
+import Header from './components/header';
+import ModalForm from './components/FormModal';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/App.css';
+import View from './components/view';
 
 
 
@@ -12,10 +15,22 @@ function App() {
 
 
   return (
-    <div className="App p-4">
-      <AddContact />
-      <PeopleList />
+    <Router>
+      <div className="App p-4">
+      <ModalForm />
+      <Header />
+      <div className='content'>
+        <Switch>
+          <Route exact path='/'>
+            <PeopleList />
+          </Route>
+          <Route path='/view-contact/:id'>
+            <View />
+          </Route>
+        </Switch>
+      </div>
     </div>
+    </Router>
   );
 
 }

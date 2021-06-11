@@ -7,12 +7,36 @@ import { addContact } from '../actions'
 //add contact form component
 class AddContact extends React.Component{
 
+  //managing input state with react cos of simplicity
     state = {
-      newPerson: ''
+      newPerson: '',
+      phone: '',
+      addr: '',
+      occp: ''
     }
   
-    handleInput = (e) => {
-      this.setState({ newPerson: e.target.value });
+    handleInput = (e, type) => {
+      switch (type) {
+        case 'name':
+          this.setState({ newPerson: e.target.value });
+          break;
+        
+        case 'phone':
+          this.setState({ phone: e.target.value });
+          break;
+
+        case 'addr':
+          this.setState({ addr: e.target.value });
+          break;
+
+        case 'occp':
+          this.setState({ occp: e.target.value });
+          break;
+      
+        default:
+          alert('sorry, unknown field');
+          break;
+      }
     }
   
     handleSubmit = (e) => {
@@ -24,15 +48,25 @@ class AddContact extends React.Component{
       }
       e.preventDefault();
     }
+
   
     render(){
       return (
-        <div className="jumbotron pb-4">
-          <h3>Contact manager</h3>
-  
-          <form onSubmit={this.handleSubmit} className='form-inline ml-sm-5 mt-5'>
-          <input type='text' placeholder='Add new contact' onChange={this.handleInput} value={this.state.newPerson}  className="form-control col-sm-8 mr-3" />
-          <button type='submit' className="btn btn-info col-sm-1 col-8 mt-sm-0 mt-2">Add</button>
+        <div>
+          <form onSubmit={this.handleSubmit} >
+
+            <input type='text' placeholder='Contact name' onChange={this.handleInput} value={this.state.newPerson}  className="form-control mb-2" />
+
+            <input type='text' placeholder='Phone number' onChange={this.handleInput} value={this.state.newPerson}  className="form-control mb-2" />
+
+            <div className='form-group form-inline'>
+              <input type='text' placeholder='Address' onChange={this.handleInput} value={this.state.newPerson}  className="form-control mb-2 col-6 mr-sm-5 mr-4" />
+
+              <input type='text' placeholder='Occupation' onChange={this.handleInput} value={this.state.newPerson}  className="form-control mb-2 col-5 ml-1 pull-right" />
+            </div>
+
+            <button type='submit' className="btn btn-info col-sm-1 col-8 mt-sm-0 mt-2">Add</button>
+
           </form>
         </div>
       );
@@ -42,7 +76,7 @@ class AddContact extends React.Component{
   
 //map our dipatch/action to component props
 const mapDispatchToProps = {
-    addContact
+  addContact
 }
 
 

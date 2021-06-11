@@ -5,3 +5,10 @@ export function addContact(newPerson) {
         data: newPerson
     }
 }
+
+export function toggleModal(toggle) {
+    return {
+        type: 'TOGGLE_MODAL',
+        data: toggle
+    }
+}
