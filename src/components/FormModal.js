@@ -6,8 +6,8 @@ import AddContact from './AddContact';
 function ModalForm(props) {
     
     const closeModal = (e) => {
-        console.log(e.target.nodeName);
         if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'SPAN') {
+            //just remember never to use anyother section or span elem in d modal
             props.toggleModal('none');
         }
     }
@@ -22,14 +22,12 @@ function ModalForm(props) {
             <div className="modal-content">
 
                 <div className="modal-header">
-                    <div className='row'>
-                        <div className='col-10 text-center'>
-                            <h4>Add new contact</h4>
-                        </div>
+                    <div className='text-right'>
+                        <span className="close" onClick={ closeModal }>&times;</span>
+                    </div>
 
-                        <div className='col-2 text-right'>
-                            <span className="close text-left" onClick={ closeModal }>&times;</span>
-                        </div>
+                    <div className='text-left'>
+                        <h4>Add new contact</h4>
                     </div>
                 </div>
 

@@ -16,20 +16,20 @@ function App() {
 
   return (
     <Router>
-      <div className="App p-4">
-      <ModalForm />
-      <Header />
-      <div className='content'>
-        <Switch>
-          <Route exact path='/'>
-            <PeopleList />
-          </Route>
-          <Route path='/view-contact/:id'>
-            <View />
-          </Route>
-        </Switch>
+      <div className="App">
+        <ModalForm />
+        <Header />
+        <div className='content p-4'>
+          <Switch>
+            <Route exact path='/'>
+              <PeopleList />
+            </Route>
+            <Route path='/view-contact/:id'>
+              <View />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
     </Router>
   );
 

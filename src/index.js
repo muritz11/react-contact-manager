@@ -10,15 +10,14 @@ import './vendor/font-awesome-4.7.0/css/font-awesome.min.css';
 
 //the initial state of the app
 const initialState = {
-  con: ['maurice', 'lil sis', 'mum', 'A chigozie'],
   contacts: [ 
-     { name: 'maurice', phone: 2304389372, address: '2b savage crescent',  occupation: 'software engineer' },
+    { name: 'Maurice', phone: '+2348127173850', address: 'Trans-ekulu, Enugu',  occupation: 'software engineer' },
 
     { name: 'lil sis', phone: 2304389372, address: 'UNN nsukka', occupation: 'student' },
 
-    { name: 'mum', phone: 2304389372, address: 'Amorji nike', occupation: 'civil service' },
+    { name: 'Mr Onyeka', phone: 2304389372, address: 'Amorji nike', occupation: 'civil service' },
 
-    { name: 'A chigozie', phone: 2304389372, address: 'Onitcha, Anambara', occupation: 'trader' }
+    { name: 'Willi', phone: 2304389372, address: 'Onitcha, Anambara', occupation: 'tycoon' }
 
   ],
   modal: 'none'

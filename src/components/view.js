@@ -18,7 +18,7 @@ function View(props) {
                 <i className='fa fa-vcard-o fa-5x'></i>
                 <h2 className='mt-2'>{ cont.name }</h2>
             </div>
-            <div className='card p-3 pl-5'>
+            <div className='card p-3 pl-sm-5'>
                 <h5><i className='fa fa-phone pr-2'></i> { cont.phone }</h5>
                 <hr />
                 <h5><i className='fa fa-map-marker pr-2'></i> { cont.address }</h5>
